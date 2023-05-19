@@ -9,7 +9,7 @@ app.use(express.json());
 // Defina o cabeçalho CORS, se necessário
 app.use(cors());
 
-app.get('/api/mega-sena/latest', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     const response = await axios.get('https://loteriascaixa-api.herokuapp.com/api/mega-sena/latest');
     res.json(response.data);
