@@ -8,7 +8,13 @@ app.listen(PORT, () => {
 })
 
 app.get('/', (req, res) => {
-  res.send('Hey this is my API running 🥳')
+  try {
+    const response = axios.get('https://loteriascaixa-api.herokuapp.com/api/mega-sena/latest');
+    res.json(response.data);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao obter os resultados das loterias' });
+  }
+  // res.send('Hey this is my API running 🥳')
 })
 
 app.get('/about', (req, res) => {
