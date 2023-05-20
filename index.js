@@ -7,7 +7,9 @@ const app = express();
 app.use(express.json());
 
 // Defina o cabeçalho CORS, se necessário
-app.use(cors())
+app.use(cors({
+  origin: ['http://localhost:8080', 'http://localhost:8080/api'] // Substitua pelos domínios dos seus sites
+}));
 
 app.get('/', async (req, res) => {
   try {
