@@ -8,7 +8,7 @@ app.use(express.json());
 
 // Defina o cabeçalho CORS, se necessário
 app.use(cors({
-  origin: ['http://localhost:8080', 'http://localhost:8080/api'] // Substitua pelos domínios dos seus sites
+  origin: ['http://localhost:8080', 'http://localhost:8080/api, https://acioliwilson.github.io/lotterie-cms'] // Substitua pelos domínios dos seus sites
 }));
 
 app.get('/', async (req, res) => {
